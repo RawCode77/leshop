@@ -29,8 +29,8 @@ body {
   --formBg: #343f4b;
   --textColor: #fff;
   --primaryColor: #0076a3;
-  --paraColor: #5e6c79;
-  --paraColor: #74828f;
+  --paraColor: #f8f4f4;
+  --paraColor: #f8f4f4;
 }
 
 @font-face {
@@ -104,34 +104,31 @@ h3 {
   }   */
 
   /* Second background image */
-.image-container {
-  content: "";
-  background-repeat: repeat-y;
-  background-size: 100% 20px; /* Set height to 20px */
-  position: absolute;
-  top: 19%; /*Position25% lower from the top */
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 15px;
-  z-index: -1; /*Place it behind other content   */
-}
-/* In your CSS */
-.image-container {
-  position:absolute;
-  width: 100%;
-  height: 0;
-  padding-bottom: 4.88%; /* (13 / 266) * 100 = 4.88% */
-  overflow: hidden;
-}
+  .image-container {
+    background-image: url('images/sidebar_bottom.png');
+    background-repeat: repeat-x; 
+    /* background-size: 100% 25px;  */
+    /* background-size: cover; */
+    background-size: 100% 40% ;
+    position: absolute;
+    top: 21%; /*Position 19% lower from the top */
+    left:0;
+    right: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1; /*Place it behind other content   */
+    /*padding-bottom: 4.88%;  (13 / 266) * 100 = 4.88% */
+    padding-bottom: 10%;
+     overflow: hidden; 
+  }
 
 .image-container img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+ top: 0;
+  left: 0; 
+  max-width: 100%;
+  height: 15px;
+  background-size: cover;
 }
 .best-coffee {
   background-color: royalblue;
@@ -139,9 +136,12 @@ h3 {
   font-size: inherit;
   padding: 1rem;
   position: fixed;
-  top: 30%;
+  top: 27%;
   left: 0;
   position: fixed;
+}
+button.best-coffee:hover {
+  cursor: pointer;
 }
 .container {
   width: 100%;
@@ -156,7 +156,7 @@ h3 {
 }
 
 .gradient {
-  height: 19%;
+  height: 21%;
   width: 100%;
   background-color: rgb(38, 25, 34); 
   /* background: linear-gradient(
@@ -210,13 +210,15 @@ padding: 1px 0px; */
   clear: both;
   width: 970px;
   height: 115px;
-  margin: 20px 0;
+  margin: 20px 0 ;
   padding: 0 10px;
   overflow: hidden;
+  flex: 1 0 90%;
 }
 
 #header_bar #header {
   position: relative;
+  /* width: 41%; */
   float: left;
   padding: 0 30px;
   /* margin-top: 0; */
@@ -228,8 +230,10 @@ padding: 1px 0px; */
   position: absolute;
   top: 0;
   right: 0;
-  width: 25px;
-  height: 83px;
+  /* width: 12%;
+  height: 61%; */
+ width: 25px;
+  height: 83px; 
   background: url(images/site_title_right.png);
 }
 
@@ -266,6 +270,7 @@ padding: 1px 0px; */
   letter-spacing: 2px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 .oleo-script-swash-caps-bold {
   font-family: "Oleo Script Swash Caps", system-ui;
@@ -339,6 +344,7 @@ padding: 1px 0px; */
 nav {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
@@ -357,6 +363,7 @@ nav svg {
   top: 0;
   display: flex;
   flex-direction: column;
+  flex: 1 0 100%; 
   align-items: center;
   justify-content: space-evenly;
   transform: translateX(100%);
@@ -367,6 +374,11 @@ nav svg {
   font-family: Murach, sans-serif;
 }
 
+/* @media (max-width: 600px) {
+  #header_bar {
+    min-width: 259px;
+  }
+} */
 /* .logo {
   display: flex;
   align-items: center;
@@ -462,6 +474,12 @@ img {
   width: 100%;
   border-radius: 1rem;
   margin-top: 2rem;
+ 
+  
+}
+.videos {
+ 
+  justify-content: center;
   
 }
 
@@ -479,7 +497,7 @@ img {
   bottom: 10%;
   left: 50%;
   transform: translate(-50%, -10%);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .about {
@@ -493,6 +511,7 @@ img {
 .about p {
   line-height: 150%;
   font-size: 1.2rem;
+  color: #f8f4f4;
 }
 .about img {
   width: 100%;
